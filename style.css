@@ -497,8 +497,8 @@ list-style: none;
   text-indent: 16.625rem;
 }
 /* Accordion */
-.accordion {
-  max-inline-size: 55rem;
+.grid-accordion  {
+  grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
 }
 .accordion-title {
   position: relative;
