@@ -464,31 +464,31 @@ list-style: none;
   background-color: var(--clr-red);
 }
 /* Banner */
-.banner {
+.banner-webinar {
   overflow: hidden;
 }
-.banner .wrapper {
+.banner-webinar .wrapper {
   z-index: 3;
 }
-.banner::after {
+.banner-webinar::after {
   content: "";
   position: absolute;
   width: 504px;
   height: 501px;
-  top: -58%;
+  top: -67%;
   left: 3%;
   background-image: url(img/stamp.webp);
   background-position: left center;
   background-repeat: no-repeat;
   z-index: 1;
 }
-.banner .grid {
+.banner-webinar .grid {
   padding-block: var(--space-m);
 }
-.grid-banner {
+.grid-webinar {
   grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
 }
-.cta-banner {
+.cta-webinar {
   text-decoration: none;
   padding-inline: var(--space-xs);
   padding-block: var(--space-2xs);
