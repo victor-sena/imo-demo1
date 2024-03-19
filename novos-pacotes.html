@@ -42,11 +42,39 @@
         <section class="pricing pb-start-xl color-mid-dark">
             <div class="wrapper">
                 <div class="stack stack:xl">
+                    <div class="center">
+                        <select name="metric" id="metric">
+                            <option value="1-5">1-5 inserções</option>
+                            <option value="6-10">6-10 inserções</option>
+                            <option value="1-10" selected>1-10 inserções</option>
+                            <option value="10-20">10-20 inserções</option>
+                            <option value="21-30">21-30 inserções</option>
+                            <option value="31-40">31-40 inserções</option>
+                            <option value="41-50">41-50 inserções</option>
+                            <option value="51-60">51-60 inserções</option>
+                            <option value="61-70">61-70 inserções</option>
+                            <option value="71-80">71-80 inserções</option>
+                            <option value="81-90">81-90 inserções</option>
+                            <option value="91-100">91-100 inserções</option>
+                            <option value="101-150">101-150 inserções</option>
+                            <option value="151-200">151-200 inserções</option>
+                            <option value="201-300">201-300 inserções</option>
+                            <option value="301-400">301-400 inserções</option>
+                            <option value="401-500">401-500 inserções</option>
+                            <option value="501-1000">501-1000 inserções</option>
+                            <option value="1001-1500">1001-1500 inserções</option>
+                            <option value="1501-3000">1501-3000 inserções</option>
+                            <option value="3001-9999">3001-9999 inserções</option>
+                          </select>
+                    </div>
                     <div class="grid grid-pricing gap-s">
                         <div class="box stack stack:s bg-light">
                             <h3 class="text-step-3">Start</h3>
                             <p class="text-step--2">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet </p>
-                            <p class="text-step-8 bold">100 <span class="text-step--2 bold">&euro;</span></p>
+                            <div class="flex">
+                                <p id="start-price" class="text-step-8 bold">100</p>
+                                <span class="align-self:center text-step--2 bold">&euro;</span>
+                            </div>
                             <small class="text-step--2">Lorem ipsum dolor sit amet</small>
                             <a class="cta text-step--1 text-center semiBold color-light bg-teal" href="#">CTA</a>
                             <ul class="mark stack stack:3xs text-step--1 mb-start-l">
@@ -60,7 +88,10 @@
                         <div class="box stack stack:s bg-light">
                             <h3 class="text-step-3">Optimum</h3>
                             <p class="text-step--2">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet </p>
-                            <p class="text-step-8 bold">150 <span class="text-step--2 bold">&euro;</span></p>
+                            <div class="flex">
+                                <p id="optimum-price" class="text-step-8 bold">100</p>
+                                <span class="align-self:center text-step--2 bold">&euro;</span>
+                            </div>
                             <small class="text-step--2">Lorem ipsum dolor sit amet</small>
                             <a class="cta text-step--1 text-center semiBold color-light bg-teal" href="#">CTA</a>
                             <ul class="mark stack stack:3xs text-step--1 mb-start-l">
@@ -74,7 +105,10 @@
                         <div class="box stack stack:s bg-light">
                             <h3 class="text-step-3">Premium</h3>
                             <p class="text-step--2">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet </p>
-                            <p class="text-step-8 bold">200 <span class="text-step--2 bold">&euro;</span></p>
+                            <div class="flex">
+                                <p id="premium-price" class="text-step-8 bold">100</p>
+                                <span class="align-self:center text-step--2 bold">&euro;</span>
+                            </div>
                             <small class="text-step--2">Lorem ipsum dolor sit amet</small>
                             <a class="cta text-step--1 text-center semiBold color-light bg-teal" href="#">CTA</a>
                             <ul class="mark stack stack:3xs text-step--1 mb-start-l">
@@ -318,5 +352,129 @@
             <small class="center">Copyright 2024</small>
         </div>
     </footer>
+    <script>
+        const config = {
+            "1-5": {
+                "start": "39",
+                "optimum": "-",
+                "premium": "-"
+            },
+            "6-10": {
+                "start": "59",
+                "optimum": "-",
+                "premium": "-"
+            },
+            "1-10": {
+            "start": "-",
+                "optimum": "79",
+                "premium": "89"
+            },
+            "10-20": {
+                "start": "79",
+                "optimum": "89",
+                "premium": "109"
+            },
+            "21-30": {
+                "start": "89",
+                "optimum": "109",
+                "premium": "119"
+            },
+            "31-40": {
+                "start": "99",
+                "optimum": "119",
+                "premium": "139"
+            },
+            "41-50": {
+                "start": "119",
+                "optimum": "139",
+                "premium": "149"
+            },
+            "51-60": {
+                "start": "139",
+                "optimum": "159",
+                "premium": "169"
+            },
+            "61-70": {
+                "start": "149",
+                "optimum": "169",
+                "premium": "189"
+            },
+            "71-80": {
+                "start": "159",
+                "optimum": "179",
+                "premium": "199"
+            },
+            "81-90": {
+                "start": "169",
+                "optimum": "189",
+                "premium": "209"
+            },
+            "91-100": {
+                "start": "179",
+                "optimum": "199",
+                "premium": "219"
+            },
+            "101-150": {
+                "start": "189",
+                "optimum": "209",
+                "premium": "239"
+            },
+            "151-200": {
+                "start": "209",
+                "optimum": "239",
+                "premium": "279"
+            },
+            "201-300": {
+                "start": "239",
+                "optimum": "279",
+                "premium": "319"
+            },
+            "301-400": {
+                "start": "279",
+                "optimum": "319",
+                "premium": "459"
+            },
+            "401-500": {
+                "start": "319",
+                "optimum": "459",
+                "premium": "659"
+            },
+            "501-1000": {
+                "start": "459",
+                "optimum": "659",
+                "premium": "819"
+            },
+            "1001-1500": {
+                "start": "659",
+                "optimum": "819",
+                "premium": "999"
+            },
+            "1501-3000": {
+                "start": "819",
+                "optimum": "999",
+                "premium": "1299"
+            },
+            "3001-9999": {
+                "start": "999",
+                "optimum": "1299",
+                "premium": "1599"
+            }
+            
+            
+        }
+
+        document.getElementById("metric").addEventListener("change", function(){
+            const metricValue = document.getElementById("metric").value;
+            const startEl = document.getElementById("start-price");
+            const optimumEl = document.getElementById("optimum-price");
+            const premiumEl = document.getElementById("premium-price");
+
+                   
+            startEl.innerHTML = config[metricValue].start;
+            optimumEl.innerHTML = config[metricValue].optimum;
+            premiumEl.innerHTML = config[metricValue].premium;
+        
+        });
+    </script>
 </body>
 </html>
