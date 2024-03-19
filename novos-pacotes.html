@@ -43,37 +43,40 @@
             <div class="wrapper">
                 <div class="stack stack:xl">
                     <div class="center">
-                        <select name="metric" id="metric">
-                            <option value="1-5">1-5 inserções</option>
-                            <option value="6-10">6-10 inserções</option>
-                            <option value="1-10" selected>1-10 inserções</option>
-                            <option value="10-20">10-20 inserções</option>
-                            <option value="21-30">21-30 inserções</option>
-                            <option value="31-40">31-40 inserções</option>
-                            <option value="41-50">41-50 inserções</option>
-                            <option value="51-60">51-60 inserções</option>
-                            <option value="61-70">61-70 inserções</option>
-                            <option value="71-80">71-80 inserções</option>
-                            <option value="81-90">81-90 inserções</option>
-                            <option value="91-100">91-100 inserções</option>
-                            <option value="101-150">101-150 inserções</option>
-                            <option value="151-200">151-200 inserções</option>
-                            <option value="201-300">201-300 inserções</option>
-                            <option value="301-400">301-400 inserções</option>
-                            <option value="401-500">401-500 inserções</option>
-                            <option value="501-1000">501-1000 inserções</option>
-                            <option value="1001-1500">1001-1500 inserções</option>
-                            <option value="1501-3000">1501-3000 inserções</option>
-                            <option value="3001-9999">3001-9999 inserções</option>
-                          </select>
+                        <div class="flex gap-2xs">
+                            <p>Verifique o preço para:</p>
+                            <select name="metric" id="metric">
+                                <option value="1-5">1-5 inserções</option>
+                                <option value="6-10">6-10 inserções</option>
+                                <option value="1-10" selected>1-10 inserções</option>
+                                <option value="10-20">10-20 inserções</option>
+                                <option value="21-30">21-30 inserções</option>
+                                <option value="31-40">31-40 inserções</option>
+                                <option value="41-50">41-50 inserções</option>
+                                <option value="51-60">51-60 inserções</option>
+                                <option value="61-70">61-70 inserções</option>
+                                <option value="71-80">71-80 inserções</option>
+                                <option value="81-90">81-90 inserções</option>
+                                <option value="91-100">91-100 inserções</option>
+                                <option value="101-150">101-150 inserções</option>
+                                <option value="151-200">151-200 inserções</option>
+                                <option value="201-300">201-300 inserções</option>
+                                <option value="301-400">301-400 inserções</option>
+                                <option value="401-500">401-500 inserções</option>
+                                <option value="501-1000">501-1000 inserções</option>
+                                <option value="1001-1500">1001-1500 inserções</option>
+                                <option value="1501-3000">1501-3000 inserções</option>
+                                <option value="3001-9999">3001-9999 inserções</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="grid grid-pricing gap-s">
-                        <div class="box stack stack:s bg-light">
+                        <div class="start-container box stack stack:s bg-light">
                             <h3 class="text-step-3">Start</h3>
                             <p class="text-step--2">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet </p>
                             <div class="flex">
                                 <p id="start-price" class="text-step-8 bold">100</p>
-                                <span class="align-self:center text-step--2 bold">&euro;</span>
+                                <span class="currency align-self:center text-step--2 bold">&euro;</span>
                             </div>
                             <small class="text-step--2">Lorem ipsum dolor sit amet</small>
                             <a class="cta text-step--1 text-center semiBold color-light bg-teal" href="#">CTA</a>
@@ -85,12 +88,12 @@
                                 <li>Lorem ipsum dolor sit </li>
                             </ul>
                         </div>
-                        <div class="box stack stack:s bg-light">
+                        <div class="optimum-container box stack stack:s bg-light">
                             <h3 class="text-step-3">Optimum</h3>
                             <p class="text-step--2">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet </p>
                             <div class="flex">
                                 <p id="optimum-price" class="text-step-8 bold">100</p>
-                                <span class="align-self:center text-step--2 bold">&euro;</span>
+                                <span class="currency align-self:center text-step--2 bold">&euro;</span>
                             </div>
                             <small class="text-step--2">Lorem ipsum dolor sit amet</small>
                             <a class="cta text-step--1 text-center semiBold color-light bg-teal" href="#">CTA</a>
@@ -102,12 +105,12 @@
                                 <li>Lorem ipsum dolor sit </li>
                             </ul>
                         </div>
-                        <div class="box stack stack:s bg-light">
+                        <div class="premium-container box stack stack:s bg-light">
                             <h3 class="text-step-3">Premium</h3>
                             <p class="text-step--2">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet </p>
                             <div class="flex">
                                 <p id="premium-price" class="text-step-8 bold">100</p>
-                                <span class="align-self:center text-step--2 bold">&euro;</span>
+                                <span class="currency align-self:center text-step--2 bold">&euro;</span>
                             </div>
                             <small class="text-step--2">Lorem ipsum dolor sit amet</small>
                             <a class="cta text-step--1 text-center semiBold color-light bg-teal" href="#">CTA</a>
@@ -462,17 +465,33 @@
             
             
         }
-
+        
         document.getElementById("metric").addEventListener("change", function(){
+            
             const metricValue = document.getElementById("metric").value;
-            const startEl = document.getElementById("start-price");
-            const optimumEl = document.getElementById("optimum-price");
-            const premiumEl = document.getElementById("premium-price");
+            const startPrice = document.getElementById("start-price");
+            const optimumPrice = document.getElementById("optimum-price");
+            const premiumPrice = document.getElementById("premium-price");
+            const startContainer = document.querySelector('.start-container');
+            const optimumContainer = document.querySelector('.optimum-container');
+            const premiumContainer = document.querySelector('.premium-container');
 
-                   
-            startEl.innerHTML = config[metricValue].start;
-            optimumEl.innerHTML = config[metricValue].optimum;
-            premiumEl.innerHTML = config[metricValue].premium;
+            if (['1-5', '6-10'].includes(metricValue)) {
+                startContainer.classList.remove('disable');
+                optimumContainer.classList.add('disable');
+                premiumContainer.classList.add('disable');
+            } else if (metricValue === '1-10') {
+                startContainer.classList.add('disable');
+                optimumContainer.classList.remove('disable');
+                premiumContainer.classList.remove('disable');
+            } else {
+                startContainer.classList.remove('disable');
+                optimumContainer.classList.remove('disable');
+                optimumContainer.classList.remove('disable');
+            } 
+            startPrice.innerHTML = config[metricValue].start;
+            optimumPrice.innerHTML = config[metricValue].optimum;
+            premiumPrice.innerHTML = config[metricValue].premium;
         
         });
     </script>

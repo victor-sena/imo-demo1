@@ -504,6 +504,15 @@ list-style: none;
   height: max-content;
 }
 /* GAP */
+.gap-3xs {
+  gap: var(--space-3xs) !important;
+}
+.gap-2xs {
+  gap: var(--space-2xs) !important;
+}
+.gap-xs {
+  gap: var(--space-xs) !important;
+}
 .gap-s {
   gap: var(--space-s) !important;
 }
@@ -763,6 +772,9 @@ table > tbody tr td:first-child {
 .mark li::before {
   content: url(img/mark.svg);
   padding-inline-end: .6rem;  
+}
+.disable .currency {
+  display: none;
 }
 /* Advantage */
 .grid-two-columns {
