@@ -88,6 +88,7 @@ textarea:not([rows]) {
   --font-regular:400;
   --font-semiBold:600;
   --font-bold:700;
+  --font-extraBold:800;
 
  /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1240,18,1.14,10,3,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
@@ -204,6 +205,9 @@ list-style: none;
 }
 .semiBold {
   font-weight: var(--font-semiBold);
+}
+.extraBold {
+  font-weight: var(--font-extraBold) !important;
 }
 .text-step--3 {
   font-size: var(--step--3);
@@ -429,6 +433,9 @@ list-style: none;
 }
 .pb-start-xl {
   padding-block-start: var(--space-xl) !important;
+}
+.pb-start-2xl {
+  padding-block-start: var(--space-2xl) !important;
 }
 .pb-end-xl {
   padding-block-end: var(--space-xl) !important;
@@ -699,7 +706,7 @@ list-style: none;
 .accordion-content p:last-child {
   padding-block-end: var(--space-l);
 }
-/* Table */
+/* Tables */
 table {
   width: 100%;
   margin-bottom: 1rem;
@@ -710,15 +717,29 @@ table {
 table > :not(caption) > * > * {
   padding: 1.2rem 2.4rem;
   color: var(--clr-mid-dark);
-  border:1px solid #bfbfbf;
   text-align: center;
 }
-table > tbody > tr:nth-of-type(2n+1) > * {
+.table-border > :not(caption) > * > * {
+  border:1px solid #bfbfbf;
+}
+.table-stripe > tr:nth-of-type(odd) > * {
   background-color: #faf8fe;
 }
+.odd td {
+  background-color: var(--clr-light) !important;
+}
+.even td {
+  background-color: #faf8fe !important;
+}
 table > tbody tr td:first-child {
-  font-weight: var(--font-semiBold);
   text-align: left;
+}
+.td-semiBold > tbody tr td:first-child {
+  font-weight: var(--font-semiBold);
+}
+.table-plans > tbody tr td:first-child {
+  font-size: var(--step--1);
+  font-weight: var(--font-regular);
 }
 /* Bundles */
 .grid-pricing {
