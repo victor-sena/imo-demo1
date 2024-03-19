@@ -175,6 +175,9 @@ h3, h4 {
 .align-items\:center {
   align-items:center;
 }
+.justify-items\:center {
+  justify-items: center;
+}
 .justify-content\:space-between {
   justify-content: space-between;
 }
@@ -183,6 +186,9 @@ h3, h4 {
 }
 .grid {
   display: grid;
+}
+.grid-three-columns {
+  grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
 }
 .list-style\:none {
 list-style: none;
@@ -307,6 +313,12 @@ list-style: none;
   border-radius: 1.5rem;
 }
 /* Spacing */
+.mb-start-3xs {
+  margin-block-start: var(--space-3xs) !important;
+}
+.mb-start-2xs {
+  margin-block-start: var(--space-2xs) !important;
+}
 .mb-start-xs {
   margin-block-start: var(--space-xs) !important;
 }
@@ -328,6 +340,21 @@ list-style: none;
 .mb-start-3xl {
   margin-block-start: var(--space-3xl) !important;
 }
+.mb-end-3xs {
+  margin-block-end: var(--space-3xs) !important;
+}
+.mb-end-2xs {
+  margin-block-end: var(--space-2xs) !important;
+}
+.mb-end-xs {
+  margin-block-end: var(--space-xs) !important;
+}
+.mb-end-s {
+  margin-block-end: var(--space-s) !important;
+}
+.mb-end-m {
+  margin-block-end: var(--space-m) !important;
+}
 .mb-end-l {
   margin-block-end: var(--space-l) !important;
 }
@@ -340,6 +367,60 @@ list-style: none;
 .mb-end-3xl {
   margin-block-end: var(--space-3xl) !important;
 }
+.mb-3xs {
+  margin-block: var(--space-3xs) !important;
+}
+.mb-2xs {
+  margin-block: var(--space-2xs) !important;
+}
+.mb-xs {
+  margin-block: var(--space-xs) !important;
+}
+.mb-s {
+  margin-block: var(--space-s) !important;
+}
+.mb-m {
+  margin-block: var(--space-m) !important;
+}
+.mb-l {
+  margin-block: var(--space-l) !important;
+}
+.mb-xl {
+  margin-block: var(--space-xl) !important;
+}
+.mb-2xl {
+  margin-block: var(--space-2xl) !important;
+}
+.mb-3xl {
+  margin-block: var(--space-3xl) !important;
+}
+.mi-3xs {
+  margin-inline: var(--space-3xs) !important;
+}
+.mi-2xs {
+  margin-inline: var(--space-2xs) !important;
+}
+.mi-xs {
+  margin-inline: var(--space-xs) !important;
+}
+.mi-s {
+  margin-inline: var(--space-s) !important;
+}
+.mi-m {
+  margin-inline: var(--space-m) !important;
+}
+.mi-l {
+  margin-inline: var(--space-l) !important;
+}
+.mi-xl {
+  margin-inline: var(--space-xl) !important;
+}
+.mi-2xl {
+  margin-inline: var(--space-2xl) !important;
+}
+.mi-3xl {
+  margin-inline: var(--space-3xl) !important;
+}
 .margin-top\:auto {
   margin-top: auto !important;
 }
@@ -347,7 +428,70 @@ list-style: none;
   margin-block-start:0 !important;
 }
 .pb-start-xl {
-  padding-block-start: var(--space-xl);
+  padding-block-start: var(--space-xl) !important;
+}
+.pb-end-xl {
+  padding-block-end: var(--space-xl) !important;
+}
+.pb-end-2xl {
+  padding-block-end: var(--space-2xl) !important;
+}
+.pb-3xs {
+  padding-block: var(--space-3xs) !important;
+}
+.pb-2xs {
+  padding-block: var(--space-2xs) !important;
+}
+.pb-xs {
+  padding-block: var(--space-xs) !important;
+}
+.pb-s {
+  padding-block: var(--space-s) !important;
+}
+.pb-m {
+  padding-block: var(--space-m) !important;
+}
+.pb-l {
+  padding-block: var(--space-l) !important;
+}
+.pb-xl {
+  padding-block: var(--space-xl) !important;
+}
+.pb-2xl {
+  padding-block: var(--space-2xl) !important;
+}
+.pb-3xl {
+  padding-block: var(--space-3xl) !important;
+}
+.pi-3xs {
+  padding-inline: var(--space-3xs) !important;
+}
+.pi-2xs {
+  padding-inline: var(--space-2xs) !important;
+}
+.pi-xs {
+  padding-inline: var(--space-xs) !important;
+}
+.pi-s {
+  padding-inline: var(--space-s) !important;
+}
+.pi-m {
+  padding-inline: var(--space-m) !important;
+}
+.pi-l {
+  padding-inline: var(--space-l) !important;
+}
+.pi-xl {
+  padding-inline: var(--space-xl) !important;
+}
+.pi-2xl {
+  padding-inline: var(--space-2xl) !important;
+}
+.pi-3xl {
+  padding-inline: var(--space-3xl) !important;
+}
+.h\:max-content {
+  height: max-content;
 }
 /* GAP */
 .gap-s {
@@ -654,6 +798,11 @@ table > tbody tr td:first-child {
 }
 .box[data-theme="red"] .timeline{
   right: var(--space-xl);
+}
+/* Upgrade */
+.upgrade .box {
+  padding-block: var(--space-l);
+  padding-inline:var(--space-l)
 }
 /* Footer */
 .footer-inner {
