@@ -167,7 +167,9 @@
                             <td class="pb-start-2xl text-uppercase extraBold" colspan="4">Destaques Incluídos</td>
                         </tr>
                         <tr>
-                            <td>Exportação para OLX</td>
+                            <td>Exportação para OLX
+                                <span class="tooltip-icon" data-tooltip aria-label="A promoção “Oferta no OLX” exporta o seu anúncio do Imovirtual para o OLX. Vai poder encontrá-lo na mesma categoria e localização que está disponível no Imovirtual. Além disso, todas as alterações feitas no anúncio do Imovirtual também são copiadas para anúncio do OLX."></span>
+                            </td>
                             <td>Gratuito</td>
                             <td>Gratuito</td>
                             <td>Gratuito</td>
@@ -179,19 +181,25 @@
                             <td>STANDARD OLX </td>
                         </tr>
                         <tr>
-                            <td>TOP</td>
+                            <td>TOP
+                                <span class="tooltip-icon" data-tooltip aria-label="Os anúncios com a promoção TOP são apresentados numa secção denominada “Anúncios em Destaque”, que fica no topo da lista de pesquisas de uma determinada localização. Passam a existir 3 anúncios visíveis, de forma rotativa, sem limitação de anúncios em destaque."></span>
+                            </td>
                             <td>Não</td>
                             <td>2</td>
                             <td>3</td>
                         </tr>
                         <tr>
-                            <td>Megabump</td>
+                            <td>Megabump 
+                                <span class="tooltip-icon" data-tooltip aria-label="O megabump irá colocar o seu anúncio no topo dos resultados de pesquisa da sua localização. Renova-se a cada 48 horas, perfazendo uma série total de 3 bumps. Não é possível dividir os três bumps sequenciais por anúncios distintos. Caso remova o anúncio entre os bumps, os que ainda não foram executados serão perdidos. O intervalo será sempre de 48 horas."></span>
+                            </td>
                             <td>2</td>
                             <td>5</td>
                             <td>7 </td>
                         </tr>
                         <tr>
-                            <td>Bump</td>
+                            <td>Bump
+                                <span class="tooltip-icon" data-tooltip aria-label="O bump é uma promoção que coloca o seu anúncio no topo dos resultados de pesquisa para uma localização específica. O anúncio permanecerá no topo da lista até que outros utilizadores adicionem um novo anúncio ou usem a opção bump."></span>
+                            </td>
                             <td>1</td>
                             <td>2</td>
                             <td>4 </td>
@@ -233,13 +241,17 @@
                             <td>SIM</td>
                         </tr>
                         <tr class="odd">
-                            <td>IMO RADAR - dados da concorrência</td>
+                            <td>IMO RADAR - dados da concorrência
+                                <span class="tooltip-icon" data-tooltip aria-label="O IMO Radar é uma ferramenta que analisa e  compara a performance dos seus anúncios com os da concorrência e que lhe dá insights valiosos, em tempo real, para que possa otimizar campanhas e melhorar as suas hipóteses de venda, quando os produtos são semelhantes."></span>
+                            </td>
                             <td>Mensalmente</td>
                             <td>Semanalmente</td>
                             <td>Diariamente </td>
                         </tr>
                         <tr class="even">
-                            <td>Recomendação de Destaques</td>
+                            <td>Recomendação de Destaques
+                                <span class="tooltip-icon" data-tooltip aria-label="Ferramenta disponível no Imovirtual, que fornece sugestões sobre a opção mais adequada para determinado anúncio, a fim de melhorar as suas estatísticas. Este mecanismo permite fazer uma estimativa do alcance que a oferta poderá ter e a que tipo de público-alvo irá ser direcionada, facilitando o planeamento das ações da sua conta e a gestão do orçamento para a promoção de imóveis."></span>
+                            </td>
                             <td>SIM</td>
                             <td>SIM</td>
                             <td>SIM</td>
@@ -248,7 +260,9 @@
                             <td class="pb-start-2xl text-uppercase extraBold" colspan="4">INTEGRAÇÃO E AUTOMAÇÃO</td>
                         </tr>
                         <tr class="even">
-                            <td>Planeador de Destaques</td>
+                            <td>Planeador de Destaques
+                                <span class="tooltip-icon" data-tooltip aria-label="Ferramenta, que lhe permite agendar as suas promoções e planear o seu lançamento, tendo em conta a sazonalidade e concorrência do seu negócio, e libertar tempo para outras tarefas."></span>
+                            </td>
                             <td>SIM</td>
                             <td>SIM</td>
                             <td>SIM</td>
@@ -497,5 +511,50 @@
         
         });
     </script>
+    <script>
+        function initTooltip() {
+            const tooltips = document.querySelectorAll('[data-tooltip]');
+
+            tooltips.forEach((item) => {
+                item.addEventListener('mouseover', onMouseOver);
+            })
+
+            function onMouseOver(event) {
+                const tooltipBox = criarTooltipBox(this);
+
+                onMouseMove.tooltipBox = tooltipBox;
+                this.addEventListener('mousemove', onMouseMove);
+
+                onMouseLeave.tooltipBox = tooltipBox;
+                onMouseLeave.element = this;
+                this.addEventListener('mouseleave', onMouseLeave);
+            }
+
+            const onMouseLeave = {
+                handleEvent() {
+                this.tooltipBox.remove();
+                this.element.removeEventListener('mouseleave', onMouseLeave);
+                this.element.removeEventListener('mousemove', onMouseMove);
+                }
+            }
+
+            const onMouseMove = {
+                handleEvent(event) {
+                this.tooltipBox.style.top = event.pageY + 11 + 'px';
+                this.tooltipBox.style.left = event.pageX + 11 + 'px';
+                }
+            }
+
+            function criarTooltipBox(element) {
+                const tooltipBox = document.createElement('div');
+                const text = element.getAttribute('aria-label');
+                tooltipBox.classList.add('tooltip');
+                tooltipBox.innerText = text;
+                document.body.appendChild(tooltipBox);
+                return tooltipBox;
+            }
+        }
+        initTooltip();
+</script>
 </body>
 </html>
