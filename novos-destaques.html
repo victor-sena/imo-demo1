@@ -52,7 +52,10 @@
                         </thead>
                         <tbody class="table-stripe" role="rowgroup">
                             <tr role="row">
-                                <td role="cell" data-cell="" scope="row">Exportação OLX</td>
+                                <td role="cell" data-cell="" scope="row">Exportação OLX
+                                    <span class="tooltip-icon" data-tooltip aria-label="A promoção “Oferta no OLX” exporta o seu anúncio do Imovirtual para o serviço OLX. Vai poder encontrá-lo na mesma categoria e local que está disponível no Imovirtual. Além disso, todas as alterações feitas no anúncio do Imovirtual também são copiadas para anúncio do OLX. Depois de fazer o login na sua conta, pode adquirir esta promoção antecipadamente através da secção “Resumo”. Irá poder escolher a quantidade de promoções que pretende comprar e utilizá-las nos seus anúncios. Também pode ativar a promoção “Oferta no OLX” diretamente num anúncio específico, selecionando o botão “Promover” ou agendando o início da promoção através do Planificador de Promoções.">
+                                    </span>
+                                    </td>
                                 <td role="cell" data-cell="Duração">Sempre que ativo</td>
                                 <td role="cell" data-cell="Preço">Gratuito</td>
                             </tr>
@@ -151,5 +154,50 @@
             <small class="center">Copyright 2024</small>
         </div>
     </footer>
+    <script>
+            function initTooltip() {
+                const tooltips = document.querySelectorAll('[data-tooltip]');
+
+                tooltips.forEach((item) => {
+                    item.addEventListener('mouseover', onMouseOver);
+                })
+
+                function onMouseOver(event) {
+                    const tooltipBox = criarTooltipBox(this);
+
+                    onMouseMove.tooltipBox = tooltipBox;
+                    this.addEventListener('mousemove', onMouseMove);
+
+                    onMouseLeave.tooltipBox = tooltipBox;
+                    onMouseLeave.element = this;
+                    this.addEventListener('mouseleave', onMouseLeave);
+                }
+
+                const onMouseLeave = {
+                    handleEvent() {
+                    this.tooltipBox.remove();
+                    this.element.removeEventListener('mouseleave', onMouseLeave);
+                    this.element.removeEventListener('mousemove', onMouseMove);
+                    }
+                }
+
+                const onMouseMove = {
+                    handleEvent(event) {
+                    this.tooltipBox.style.top = event.pageY + 11 + 'px';
+                    this.tooltipBox.style.left = event.pageX + 11 + 'px';
+                    }
+                }
+
+                function criarTooltipBox(element) {
+                    const tooltipBox = document.createElement('div');
+                    const text = element.getAttribute('aria-label');
+                    tooltipBox.classList.add('tooltip');
+                    tooltipBox.innerText = text;
+                    document.body.appendChild(tooltipBox);
+                    return tooltipBox;
+                }
+            }
+            initTooltip();
+    </script>
 </body>
 </html>

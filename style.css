@@ -835,6 +835,23 @@ table > tbody tr td:first-child {
 .box[data-theme="red"] .timeline{
   right: var(--space-xl);
 }
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  width: 40ch;
+  z-index: 500;
+  background-color: #c8edf8;
+  border-radius: 0 18px 18px 18px;
+  padding: var(--space-xs);
+  font-size: var(--step--2);  
+}
+.tooltip-icon {
+  display: inline-flex;
+  background-image: url(img/question.svg);
+  color: var(--clr-teal);
+  width: 16px;
+  height: 16px;
+}
 /* Upgrade */
 .upgrade .box {
   padding-block: var(--space-l);
@@ -875,7 +892,3 @@ footer h3 {
 .footer-nav a:is(:hover,:focus) {
   color: var(--clr-light);
 }
-
-
-
-
